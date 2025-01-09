@@ -1,6 +1,6 @@
 # golang-api
 
-This API is based on the tutorial *Developing a RESTful API with Go and Gin*
+This API is based on the tutorial [*Developing a RESTful API with Go and Gin*](https://go.dev/doc/tutorial/web-service-gin)
 
 ## API
 
