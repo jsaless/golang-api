@@ -21,10 +21,10 @@ func main() {
 The data structure for this API will be an Album:
 ```go
 type Album struct {
-    ID     string `json:"id"`
-    Title  string `json:"title"`
-    Artist string `json:"artist"`
-    Price float64 `json:"price"`
+    ID     string  `json:"id"`
+    Title  string  `json:"title"`
+    Artist string  `json:"artist"`
+    Price  float64 `json:"price"`
 }
 ```
 
