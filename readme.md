@@ -45,7 +45,7 @@ What we have here:
 - Call `gin.Context.IndentedJSON` to serialize the struct into JSON and add it to the response.
 
 > [!NOTE]
-> The CURl command to get the data from this endpoint is `curl -X GET localhost:8080/albums`
+> The CURL command to get the data from this endpoint is `curl -X GET localhost:8080/albums`
 
 ### Create an item
 
@@ -68,6 +68,9 @@ What we have here:
 - Use `gin.Context.BindJSON` to bind the request body to `newAlbum` variable.
 - Add a 201 status code to the response along with jSON representing the album data added.
 
+> [!NOTE]
+> The CURL command to get the data from this endpoint is `curl -X POST localhost:8080/albums --data '{"id": "4", "title": "The modern sound of Betty Carter", "artist": "Betty Carter", "price": 49.99}'`
+
 ### Return an item by ID
 
 When the client makes a request at **GET** /albums/[id], you want to return the item whose ID matches the id path parameter.
@@ -76,8 +79,6 @@ When the client makes a request at **GET** /albums/[id], you want to return the 
 func getAlbumByID(c *gin.Context) {
     id := c.Param("id")
 
-    // Loop over the list of albums, looking for
-    // an album whose ID value matches the parameter.
     for _, a := range albums {
         if a.ID == id {
             c.IndentedJSON(http.StatusOK, a)
@@ -89,4 +90,7 @@ func getAlbumByID(c *gin.Context) {
 ```
 
 What we have here:
-- Use `gin.Context.Param` to retrieve the `id` path parameter from the URL. When you map this handler to a path, you will include a placeholder for the parameter in the path 
+- Use `gin.Context.Param` to retrieve the `id` path parameter from the URL. When you map this handler to a path, you will include a placeholder for the parameter in the path.
+
+> [!NOTE]
+> The CURL command to get the data from this endpoint is `curl -X GET localhost:8080/albums/1`
